@@ -1,0 +1,20 @@
+(fun gcd (a b)
+    (if (= b 0)
+        a
+        (gcd b (% a b))
+     )
+)
+
+(fun lcm (a b)
+    (/ (* a b) (gcd a b))
+)
+
+(fun prob5 (n)
+    (if (= n 1)
+        1
+        (lcm n (prob5 (- n 1) ) )
+    )
+)
+
+(print "Smallest multiple")
+(printi (prob5 20))
